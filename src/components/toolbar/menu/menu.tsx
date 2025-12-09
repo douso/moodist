@@ -7,8 +7,6 @@ import { AnimatePresence, motion } from 'motion/react';
 import {
   ShuffleItem,
   ShareItem,
-  DonateItem,
-  SourceItem,
   PresetsItem,
   ShortcutsItem,
   SleepTimerItem,
@@ -147,7 +145,7 @@ export function Menu() {
                     <Divider />
 
                     <div className={styles.globalVolume}>
-                      <label htmlFor="global-volume">Global Volume</label>
+                      <label htmlFor="global-volume">全局音量</label>
                       <Slider
                         max={100}
                         min={0}
@@ -155,10 +153,6 @@ export function Menu() {
                         onChange={value => setGlobalVolume(value / 100)}
                       />
                     </div>
-
-                    <Divider />
-                    <DonateItem />
-                    <SourceItem />
                   </motion.div>
                 </DropdownMenu.Content>
               </DropdownMenu.Portal>

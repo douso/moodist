@@ -10,9 +10,9 @@ export function Shuffle() {
 
   return (
     <Tooltip.Provider delayDuration={0}>
-      <Tooltip content="Shuffle sounds">
+      <Tooltip content="随机播放">
         <button
-          aria-label="Shuffle sounds"
+          aria-label="随机播放"
           className={styles.button}
           onClick={shuffle}
         >

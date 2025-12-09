@@ -17,12 +17,12 @@ interface Preset {
 }
 
 const presets: Preset[] = [
-  { baseFrequency: 100, beatFrequency: 2, name: 'Delta (Deep Sleep) 2 Hz' },
-  { baseFrequency: 100, beatFrequency: 5, name: 'Theta (Meditation) 5 Hz' },
-  { baseFrequency: 100, beatFrequency: 10, name: 'Alpha (Relaxation) 10 Hz' },
-  { baseFrequency: 100, beatFrequency: 20, name: 'Beta (Focus) 20 Hz' },
-  { baseFrequency: 100, beatFrequency: 40, name: 'Gamma (Cognition) 40 Hz' },
-  { baseFrequency: 440, beatFrequency: 10, name: 'Custom' },
+  { baseFrequency: 100, beatFrequency: 2, name: 'Delta (深睡) 2 Hz' },
+  { baseFrequency: 100, beatFrequency: 5, name: 'Theta (冥想) 5 Hz' },
+  { baseFrequency: 100, beatFrequency: 10, name: 'Alpha (放松) 10 Hz' },
+  { baseFrequency: 100, beatFrequency: 20, name: 'Beta (专注) 20 Hz' },
+  { baseFrequency: 100, beatFrequency: 40, name: 'Gamma (认知) 40 Hz' },
+  { baseFrequency: 440, beatFrequency: 10, name: '自定义' },
 ];
 
 export function IsochronicModal({ onClose, show }: IsochronicProps) {
@@ -164,13 +164,13 @@ export function IsochronicModal({ onClose, show }: IsochronicProps) {
   return (
     <Modal show={show} onClose={onClose}>
       <header className={styles.header}>
-        <h2 className={styles.title}>Isochronic Tone</h2>
-        <p className={styles.desc}>Isochronic tone generator.</p>
+        <h2 className={styles.title}>等时波</h2>
+        <p className={styles.desc}>等时波生成器。</p>
       </header>
 
       <div className={styles.fieldWrapper}>
         <label>
-          Presets:
+          预设:
           <select value={selectedPreset} onChange={handlePresetChange}>
             {presets.map(preset => (
               <option key={preset.name} value={preset.name}>
@@ -180,11 +180,11 @@ export function IsochronicModal({ onClose, show }: IsochronicProps) {
           </select>
         </label>
       </div>
-      {selectedPreset === 'Custom' && (
+      {selectedPreset === '自定义' && (
         <>
           <div className={styles.fieldWrapper}>
             <label>
-              Base Frequency (Hz):
+              基准频率 (Hz):
               <input
                 max="2000"
                 min="20"
@@ -199,7 +199,7 @@ export function IsochronicModal({ onClose, show }: IsochronicProps) {
           </div>
           <div className={styles.fieldWrapper}>
             <label>
-              Tone Frequency (Hz):
+              等时波频率 (Hz):
               <input
                 max="40"
                 min="0.1"
@@ -230,7 +230,7 @@ export function IsochronicModal({ onClose, show }: IsochronicProps) {
       )}
       <div className={styles.fieldWrapper}>
         <label>
-          Volume:
+          音量:
           <Slider
             className={styles.volume}
             max={1}
@@ -247,10 +247,10 @@ export function IsochronicModal({ onClose, show }: IsochronicProps) {
           disabled={isPlaying}
           onClick={startSound}
         >
-          Start
+          开始
         </button>
         <button disabled={!isPlaying} onClick={stopSound}>
-          Stop
+          停止
         </button>
       </div>
     </Modal>
