@@ -45,8 +45,8 @@ export function Favorite({ id, label }: FavoriteProps) {
         className={cn(styles.favoriteButton, isFavorite && styles.isFavorite)}
         aria-label={
           isFavorite
-            ? `Remove ${label} Sound from Favorites`
-            : `Add ${label} Sound to Favorites`
+            ? `从收藏中移除 ${label} 音效`
+            : `将 ${label} 音效添加到收藏`
         }
         onKeyDown={handleKeyDown}
         onClick={e => {
