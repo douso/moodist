@@ -43,18 +43,12 @@ export function UnselectButton() {
           >
             <Tooltip.Provider delayDuration={0}>
               <Tooltip
-                content={
-                  hasHistory
-                    ? 'Restore unselected sounds.'
-                    : 'Unselect all sounds.'
-                }
+                content={hasHistory ? '恢复未选择的音效' : '取消选择所有音效'}
               >
                 <button
                   disabled={noSelected && !hasHistory}
                   aria-label={
-                    hasHistory
-                      ? 'Restore Unselected Sounds'
-                      : 'Unselect All Sounds'
+                    hasHistory ? '恢复未选择的音效' : '取消选择所有音效'
                   }
                   className={cn(
                     styles.unselectButton,

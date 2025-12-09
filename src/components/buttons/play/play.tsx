@@ -20,7 +20,7 @@ export function PlayButton() {
   const handleToggle = useCallback(() => {
     if (locked) return;
 
-    if (noSelected) return showSnackbar('请先选择要播放的声音。');
+    if (noSelected) return showSnackbar('请先选择要播放的声音');
 
     toggle();
   }, [showSnackbar, toggle, noSelected, locked]);
